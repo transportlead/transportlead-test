@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>web_server</RootNamespace>
+    <SpaRoot>..\ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App"/>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="$(SpaRoot)**"/>
+    <None Remove="$(SpaRoot)**"/>
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**"/>
+  </ItemGroup>
+</Project>

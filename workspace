@@ -1,0 +1,14 @@
+#
+# Podium
+#
+
+name: Podium
+mux: tmux
+
+[Podium]
+- vsplit
+dotnet watch --project web-server run
+- hsplit
+cd ClientApp
+npm run watch
+- pane 0

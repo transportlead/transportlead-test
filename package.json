@@ -1,0 +1,32 @@
+{
+  "name": "transportlead-test",
+  "version": "1.0.0",
+  "description": "transport lead test startup",
+  "main": "mucks",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.4",
+    "glob": "^7.1.4",
+    "inquirer": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "./mucks"
+  },
+  "bin": {
+    "mucks": "./mucks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:transportlead-dev/transportlead-test.git"
+  },
+  "keywords": [
+    "transportlead",
+    "tmux",
+    "mucks"
+  ],
+  "author": "Americo Albuquerque <americo.albuquerque@transportlead.se>",
+  "license": "Private",
+  "homepage": "https://bitbucket.org/transportlead-dev/transportlead-test#readme"
+}

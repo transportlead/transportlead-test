@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Tic-Tac-Toe</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="columns">
+    <div id="main" class="column col-6 col-xs-12"></div>
+    <div class="column col-6 col-xs-12">
+        <div class="panel">
+            <div class="panel-header">
+                <h1 class="panel-title">Create a game of tic-tac-toe</h1>
+            </div>
+            <div class="panel-body">
+                <p>following the following rules:</p>
+                <ul>
+                    <li>It will use the backend in C#</li>
+                    <li>It's a multiplayer game, using websockets (signalR) as communication</li>
+                    <li>It should have a lounge view/page where you can request a game to another user waiting there
+                    </li>
+                    <li>If the user accepts the request, both will navigate to a different view where the game will
+                        happen</li>
+                    <ul>
+                        <li>This view will show the game board with the current state of the game</li>
+                        <li>It will show on the sidebar the statistics between both players</li>
+                        <ul>
+                            <li>How many games have been played between those players</li>
+                            <li>How many wins for either players and how many draws</li>
+                        </ul>
+                        <li>The game will continue until no more moves are needed or available (if there's a clear
+                            winner or a draw)</li>
+                        <li>The board should show who is playing the currently turn</li>
+                        <li>The players should only be able to move a piece on their turn</li>
+                        <li>In the end of the game, the player should have the option to play another game or go back to
+                            the lobby</li>
+                    </ul>
+                    <li>The lobby should have a list with the current ongoing games where they can watch (but not
+                        participate) the game being played</li>
+                    <ul>
+                        <li>The viewer should have the possibility to leave the play view at any time</li>
+                    </ul>
+                    <li>There should be a panel or a link to a different view with the global statistics</li>
+                    <ul>
+                        <li>The global statics should show the total amount of games played in the system</li>
+                        <li>It should have a list of players saying how many games they won, lost and draw</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
