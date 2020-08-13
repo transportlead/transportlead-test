@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace web_server
 {
@@ -40,8 +36,6 @@ namespace web_server
                 .SetBasePath(pathToContentRoot)
                 .AddJsonFile($"appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{environmentName}.json", true, true)
-                .AddJsonFile($"load-manager.json", true, true)
-                .AddJsonFile($"load-manager.{environmentName}.json", true, true)
                 .AddEnvironmentVariables()
                 .AddCommandLine(args);
 

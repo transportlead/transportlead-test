@@ -244,3 +244,4 @@ secrets/
 
 logs
 screenshots/
+*.json

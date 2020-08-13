@@ -4,13 +4,16 @@
   "description": "transport lead test startup",
   "main": "mucks",
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "clear": "^0.1.0",
-    "figlet": "^1.2.4",
-    "glob": "^7.1.4",
-    "inquirer": "^7.0.0"
+    "figlet": "^1.5.0",
+    "glob": "^7.1.6",
+    "inquirer": "^7.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.20"
+  },
   "scripts": {
     "start": "./mucks"
   },

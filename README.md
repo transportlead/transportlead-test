@@ -3,7 +3,7 @@
 
 * It will use the backend in C#
 * It’s a multiplayer game, using websockets (signalR) as communication
-*    It should have a lounge view/page where you can request a game to another user waiting there
+* It should have a lounge view/page where you can request a game to another user waiting there
 * If the user accepts the request, both will navigate to a different view where the game will happen
     * This view will show the game board with the current state of the game
     * It will show on the sidebar the statistics between both players
@@ -18,3 +18,30 @@
 * There should be a panel or  a link to a different view with the global statistics
     * The global statics should show the total amount of games played in the system
     * It should have a list of players saying how many games they won, lost and draw
+
+Each rule is worth points, any extra added not covered by the rules are also worth points
+
+## Dependencies
+
+* [dotnet core sdk 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+* [Node JS](https://nodejs.org/en/download/)
+* Git
+    * [Windows](https://git-scm.com/download/win)
+
+## Setup
+
+### Windows
+* Open git bash
+* run ```./setup-dev-files```
+* run ```dotnet restore```
+* run ```dotnet run --project web-server``` or ```dotnet watch --project web-server run```
+    * if installed git with mintty run ```winpty dotnet run --project web-server``` instead
+
+### Linux
+* Open shell
+* run ```./setup-dev-files```
+* run ```dotnet restore```
+* run ```dotnet run --project web-server``` or ```dotnet watch --project web-server run```
+
+
+Server will run on port 5000 by default

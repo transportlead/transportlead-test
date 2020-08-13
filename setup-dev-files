@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+#
+# Fonts
+#    contessa
+#    isometric1
+#    mini
+#    banner
+#    rectangles
+#    short
+
+export NO_TITLE=
+export DO_NOT_CLEAN_UP=
+export REMOVE_LOCK_FILE=
+export VERBOSE=
+
+OPTIND=1
+while getopts cnrv opt
+do
+  case $opt in
+    c)
+    export NO_TITLE=true
+    ;;
+
+    n)
+    export DO_NOT_CLEAN_UP=true
+    ;;
+
+    r)
+    export REMOVE_LOCK_FILE=true
+    ;;
+
+    v)
+    export VERBOSE=v
+    ;;
+
+    *)
+    cat<<EOF
+Usage: ${0##*/} [-crvn]
+search folders containing package.json file and execute 'npm install' inside that folder
+
+    -h  displays this help and exit
+    -c  does not displays the package name before running 'npm install'
+    -n  does not remove node_modules
+    -r  also removes package-lock.json file
+    -v  verbose, list all files removed
+EOF
+    exit 1
+    ;;
+  esac
+done
+shift "$((OPTIND-1))"   # Discard the options and sentinel --
+
+npm_install() {
+  if [ -d "$1" ]
+  then
+    DIR=$(pwd)
+    cd "$1"
+    if [ -z "$NO_TITLE" ]
+    then
+   node<<EOF
+const chalk = require('chalk');
+const figlet = require('figlet');
+const pkg = require('./package.json')
+console.log(chalk.yellow(figlet.textSync(pkg.name, { horizontalLayout: 'full', font: 'Mini' })));
+EOF
+    fi
+    if [ -z "$DO_NOT_CLEAN_UP" ]
+    then
+      echo "Cleanning up..."
+      rm -${VERBOSE}fr node_modules
+      rm -${VERBOSE}fr .cache
+      rm -${VERBOSE}fr .nyc_output
+      rm -${VERBOSE}fr .npm
+      if [ -n "$REMOVE_LOCK_FILE" ]
+      then
+        rm -${VERBOSE}fr package-lock.json
+      fi
+    fi
+    npm install
+    cd $DIR
+  fi
+}
+
+if [ -z "$NO_TITLE" ]
+then
+  [ ! -d node_modules/chalk ] && npm install chalk
+  [ ! -d node_modules/figlet ] && npm install figlet
+fi
+FILES=$(find . -name package.json -not -path '**/node_modules/*' 2>/dev/null)
+for FILE in $FILES
+do
+  npm_install $(dirname "$FILE")
+done

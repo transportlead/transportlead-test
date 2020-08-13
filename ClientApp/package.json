@@ -2,30 +2,42 @@
   "name": "web-server",
   "version": "1.0.0",
   "description": "Test app",
-  "main": "main.js",
+  "private": "true",
   "scripts": {
-    "prebuild": "rm -fr ../wwwroot/*",
-    "build": "parcel build src/index.html -d ../wwwroot --public-url /",
-    "watch": "parcel watch src/index.html -d ../wwwroot --public-url /"
+    "clean": "rm -rf dist",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development"
   },
   "author": "Americo Albuquerque <americo.albuquerque@transportlead.se>",
   "license": "Private",
   "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "clean-webpack-plugin": "^3.0.0",
+    "mini-css-extract-plugin": "^0.10.0",
     "mithril": "^2.0.4",
-    "spectre.css": "^0.5.8"
+    "spectre.css": "^0.5.9",
+    "underscore": "^1.10.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
-    "sass": "^1.22.10",
-    "parcel-bundler": "^1.12.3"
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "babel": {
     "presets": [
