@@ -16,7 +16,7 @@
     "mini-css-extract-plugin": "^0.10.0",
     "mithril": "^2.0.4",
     "spectre.css": "^0.5.9",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
